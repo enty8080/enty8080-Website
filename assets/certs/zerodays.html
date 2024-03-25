@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zerodays CTF Certificate of Completion</title>
+
+<!-- Include Bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .certificate-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    object-fit: cover;
+  }
+
+  .certificate-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+
+  .logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+
+  h1, h2, p {
+    margin: 10px 0;
+  }
+
+  .participant-info {
+    font-size: 18px;
+  }
+
+  .highlight {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .rank-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="certificate-container">
+    <img src="https://miro.medium.com/v2/resize:fit:1152/1*NhRv81u2D_5mIoylM5Skrw.jpeg" alt="Background" class="background-image">
+    <div class="certificate-content">
+        <img src="https://www.bsidesdub.ie/images/sponsor/zero_days.png" alt="Zerodays Logo" class="logo">
+        <h1><u>Certificate of Completion</u></h1>
+        <p class="participant-info">This certifies that</p>
+        <div class="highlight">
+            <p class="mb-0">enty8080</p>
+        </div>
+        <p class="participant-info">of team</p>
+        <div class="highlight">
+            <p class="mb-0">Loki</p>
+        </div>
+        <p class="participant-info">completed ZeroDays CTF ranked <b>1st</b> out of <b>92</b> teams</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+    function createAndDownloadPDF() {
+    var doc = new jsPDF();
+
+    doc.html(document.body, {
+        callback: function (pdf) {
+            pdf.save('downloaded.pdf');
+
+            window.close();
+        }
+    });
+}
+
+window.onload = function() {
+    createAndDownloadPDF();
+};
+</script>
+</body>
+</html>
