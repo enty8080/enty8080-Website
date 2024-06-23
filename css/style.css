@@ -755,7 +755,6 @@ a:focus {
     transition: 0.3s;
 }
 
-.portfolio .portfolio-item figure .link-preview,
 .portfolio .portfolio-item figure .link-details,
 .portfolio .portfolio-item figure .portfolio-title {
     position: absolute;
@@ -769,30 +768,21 @@ a:focus {
     transition: 0.2s linear;
 }
 
-.portfolio .portfolio-item figure .link-preview i,
 .portfolio .portfolio-item figure .link-details i {
     color: #222222;
     padding-top: 10px;
     font-size: 16px;
 }
 
-.portfolio .portfolio-item figure .link-preview:hover,
 .portfolio .portfolio-item figure .link-details:hover {
     background: #222222;
 }
 
-.portfolio .portfolio-item figure .link-preview:hover i,
 .portfolio .portfolio-item figure .link-details:hover i {
     color: #FF6F61;
 }
 
-.portfolio .portfolio-item figure .link-preview {
-    left: 50%;
-    top: calc(25% - 18px);
-}
-
 .portfolio .portfolio-item figure .link-details {
-    right: 50%;
     top: calc(25% - 18px);
 }
 
@@ -807,11 +797,10 @@ a:focus {
     color: #222222;
     font-size: 16px;
     font-weight: 600;
-    background: rgba(255, 111, 97, .5);
     border-radius: 0;
 }
 
-.portfolio .portfolio-item figure .portfolio-title:hover {
+.portfolio .portfolio-item figure .portfolio-title {
     text-decoration: none;
 }
 
@@ -823,17 +812,11 @@ a:focus {
     font-weight: 300;
 }
 
-.portfolio .portfolio-item figure:hover .link-preview {
+.portfolio .portfolio-item figure .link-details {
     opacity: 1;
-    left: calc(50% - 61px);
 }
 
-.portfolio .portfolio-item figure:hover .link-details {
-    opacity: 1;
-    right: calc(50% - 61px);
-}
-
-.portfolio .portfolio-item figure:hover .portfolio-title {
+.portfolio .portfolio-item figure .portfolio-title {
     opacity: 1;
     top: 50%;
 }
