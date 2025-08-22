@@ -75,5 +75,42 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
+
+    // Featured Videos carousel
+    $(function () {
+        const $carousel = $('.videos .video-carousel');
+
+        // Inject FA icons into arrows (optional)
+        const prevArrow =
+            '<button type="button" class="slick-prev" aria-label="Previous video"><i class="fa fa-chevron-left"></i></button>';
+        const nextArrow =
+            '<button type="button" class="slick-next" aria-label="Next video"><i class="fa fa-chevron-right"></i></button>';
+
+        $carousel.slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            prevArrow: prevArrow,
+            nextArrow: nextArrow,
+            adaptiveHeight: true,
+            infinite: false,
+            // Stop YouTube from continuing to play when slide changes
+            onAfterChange: function () {
+            $carousel.find('iframe').each(function () {
+                // Pause YT/Vimeo by resetting src when hidden
+                if (!$(this).closest('.slick-slide').hasClass('slick-active')) {
+                const src = $(this).attr('src');
+                $(this).attr('src', src);
+                }
+            });
+            },
+            responsive: [
+            { breakpoint: 992, settings: { slidesToShow: 1 } },
+            { breakpoint: 768, settings: { slidesToShow: 1 } }
+            ]
+        });
+    });
+
 })(jQuery);
 

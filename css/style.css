@@ -1082,3 +1082,103 @@ a:focus {
 .footer a:hover {
     color: #222222;
 }
+
+/**********************************/
+/******** Featured Videos CSS *****/
+/**********************************/
+.videos {
+    position: relative;
+    padding: 60px 30px 30px 30px;
+    background: #ffffff;
+    border-bottom: 30px solid #000000;
+}
+
+/* Card look aligned with your theme */
+.videos .video-card {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #FF6F61;
+    border-radius: 0;
+    margin: 0 10px;
+}
+
+/* 16:9 responsive iframe */
+.videos .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000000;
+}
+.videos .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Meta (title/desc) matches text scale/colors */
+.videos .video-meta {
+    padding: 15px 18px 18px;
+}
+.videos .video-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222222;
+    margin: 0 0 6px;
+}
+.videos .video-desc {
+    margin: 0;
+    color: #666666;
+}
+
+/* Slick carousel styling consistent with Review */
+.videos .slick-list { margin: 0 -10px; }
+.videos .slick-dots li button:before {
+    color: #666666;
+    font-size: 12px;
+}
+.videos .slick-dots li.slick-active button:before {
+    color: #FF6F61;
+}
+
+/* Arrow buttons similar to review controls */
+.videos .slick-prev,
+.videos .slick-next {
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    opacity: 0;
+    transition: .5s;
+    background: rgba(255, 111, 97, .7);
+}
+.videos .slick-prev { left: 15px; }
+.videos .slick-next { right: 15px; }
+
+.videos .slick-slider:hover .slick-prev,
+.videos .slick-slider:hover .slick-next {
+    opacity: 1;
+}
+
+.videos .slick-prev:hover,
+.videos .slick-prev:focus,
+.videos .slick-next:hover,
+.videos .slick-next:focus {
+    background: rgba(0, 0, 0, .7);
+}
+
+.videos .slick-prev::before,
+.videos .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 16px;
+    color: #ffffff;
+}
+.videos .slick-prev::before { content: "\f104"; }
+.videos .slick-next::before { content: "\f105"; }
+
+/* Responsive padding harmonized with your breakpoints */
+@media (max-width: 576px) {
+    .videos { padding: 60px 15px 30px 15px; }
+}
